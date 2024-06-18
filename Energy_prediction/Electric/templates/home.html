@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a style="color: white;" class="nav-link active" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a style="color: white;" class="nav-link" href="{{url_for('algorithm')}}"> Algorithm</a>
+      </li>
+      <li class="nav-item">
+        <a style="color: white;" class="nav-link" href="{{url_for('prediction')}}"> Prediction</a>
+      </li>
+      <li class="nav-item">
+        <a style="color: white;" class="nav-link" href="{{url_for('graph')}}"> Graph</a>
+      </li>
+      <li class="nav-item">
+        <a style="color: white;" class="nav-link" href="{{url_for('index')}}">Logout</a>
+      </li>
+    </ul>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <center>
+    <section style="margin-top: 90px; padding: 30px;" class="slider_section ">
+      <div class="detail-box">
+        <h1 style="color: white;">
+          Energy Consumption Prediction!
+        </h1>
+        <p style="color: white;">
+          Energy consumption prediction is a critical task in various sectors such as smart grids, energy management systems, and sustainability planning. In this project, we explore the application of several advanced algorithms including Long Short-Term Memory (LSTM), Recurrent Neural Network (RNN), Linear Regression, Gated Recurrent Unit (GRU), and stacked LSTM for the prediction of electricity consumption. The dataset utilized for this study consists of features such as temperature, pressure, wind speed, and other variables relevant to electricity consumption.
+          The LSTM and RNN models are chosen due to their capability to capture temporal dependencies in sequential data, which is essential for accurately predicting electricity consumption patterns over time. Additionally, Linear Regression is employed as a baseline model to compare the performance of more complex neural network architectures. The inclusion of GRU and stacked LSTM further extends the analysis to assess the effectiveness of alternative recurrent neural network structures.
+          Our methodology involves pre-processing the dataset to handle missing values, normalize features, and appropriately format the data for input into the models. We then train each algorithm on a subset of the dataset, tuning hyper parameters through techniques such as cross-validation to optimize performance. Evaluation metrics such as Mean Absolute Error (MAE), Root Mean Square Error (RMSE), and R-squared are employed to assess the accuracy and reliability of the models. Through experimentation, we analyse the performance of each algorithm in terms of prediction accuracy and computational efficiency. We also investigate the impact of varying hyper parameters and model architectures on the predictive capabilities of the algorithms. Furthermore, we explore potential insights into electricity consumption patterns provided by the trained models.
+          The findings of this study have implications for energy management practices, enabling stakeholders to make informed decisions regarding resource allocation, demand forecasting, and optimization of energy usage. By leveraging advanced machine learning techniques, our research contributes to the development of more accurate and reliable methods for energy consumption prediction, ultimately fostering sustainability and efficiency in energy systems.
+        
+        </p>
+      </div>
+    </section>
+  </center>
+
+{% endblock %}

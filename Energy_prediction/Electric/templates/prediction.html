@@ -1,0 +1,83 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+  <section style="margin-top: -20px;" class="contact_section layout_padding">
+    <div class="container">
+          {% if prediction %}
+            <center>
+              <h2 style="color: black;">Prediction: {{prediction}} Joule</h2>
+            </center>
+          {% endif %}
+
+      <div class="row">
+        <div style="margin-left: 300px; margin-top: 20px;" class="col-md-6">
+          <form action="{{url_for('prediction')}}" method="post">
+
+            <div>
+              <center>
+                <input style="border-radius: 5px; color: black;" type="number" step="0.00" name="a" placeholder="Enter Temperature" required/>
+              </center>
+            </div>
+
+            <div>
+              <center>
+                <input style="border-radius: 5px; color: black;" type="number" step="0.00" name="b" placeholder="Enter var1" required/>
+              </center>
+            </div>
+
+            <div>
+              <center>
+                <input style="border-radius: 5px; color: black;" type="number" step="0.00" name="c" placeholder="Enter Pressure" required/>
+              </center>
+            </div>
+
+            <div>
+              <center>
+                <input style="border-radius: 5px; color: black;" type="number" step="0.00" name="d" placeholder="Enter Windspeed" required/>
+              </center>
+            </div>
+
+            <div>
+              <center>
+                <input style="border-radius: 5px; color: black;" type="number" step="0.00" name="e" placeholder="Enter year" required/>
+              </center>
+            </div>
+
+            <div>
+              <center>
+                <input style="border-radius: 5px; color: black;" type="number" step="0.00" name="f" placeholder="Enter month" required/>
+              </center>
+            </div>
+
+            <div>
+              <center>
+                <input style="border-radius: 5px; color: black;" type="number" step="0.00" name="g" placeholder="Enter day" required/>
+              </center>
+            </div>
+
+            <div>
+              <center>
+                <input style="border-radius: 5px; color: black;" type="number" step="0.00" name="h" placeholder="Enter day of week" required/>
+              </center>
+            </div>
+
+            <div>
+              <center>
+                <input style="border-radius: 5px; color: black;" type="number" step="0.00" name="i" placeholder="Enter hour" required/>
+              </center>
+            </div>
+
+            <div class="d-flex ">
+              <center>
+                <button style="margin-left: 180px; border-radius: 5px;" type="submit">
+                  Predict!
+                </button>
+              </center>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

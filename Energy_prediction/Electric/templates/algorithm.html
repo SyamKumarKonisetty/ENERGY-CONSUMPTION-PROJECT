@@ -1,0 +1,48 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+  <section style="margin-top: -20px;" class="contact_section layout_padding">
+    <div class="container">
+      {% if accuracy %}
+      <center>
+          <h2 style="color: black;">Error Rate: {{ '%.2f'|format(accuracy[0]) }}</h2>
+          <ul>
+              <li>Mean Absolute Error: {{ '%.2f'|format(accuracy[1]['Mean Absolute Error']) }}</li>
+              <li>Mean Square Error: {{ '%.2f'|format(accuracy[1]['Mean Square Error']) }}</li>
+              <li>Root Mean Square Error: {{ '%.2f'|format(accuracy[1]['Root Mean Square Error']) }}</li>
+              <li>R2 Score: {{ '%.2f'|format(accuracy[1]['R2 Score']) }}</li>
+          </ul>
+      </center>
+      {% endif %} 
+
+      <div class="row">
+        <div style="margin-left: 300px; margin-top: 20px;" class="col-md-6">
+          <form action="{{url_for('algorithm')}}" method="post">
+
+            <div>
+              <center>
+                <select style="width: 400px; height: 50px; border-radius: 5px; padding: 10px;" class="form-select" name="algorithm" aria-label="Default select example" required>
+                    <option selected>Select Algorithm</option>
+                    <option value="Linear Regression">Linear Regression</option>
+                    <option value="RNN">Recurrent Nueral Network</option>
+                    <option value="LSTM">Long Short Term Memory</option>
+                    <option value="Stacked LSTM">Stacked LSTM</option>
+                    <option value="GRU">Gated Recurrent Unit</option>
+                  </select>
+              </center>
+            </div><br>
+
+            <div class="d-flex ">
+              <center>
+                <button style="margin-left: 80px; border-radius: 5px; width: 400px;" type="submit">
+                  Accuracy!
+                </button>
+              </center>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

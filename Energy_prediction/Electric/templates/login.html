@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  
+    <section style="margin-top: -20px;" class="contact_section layout_padding">
+      <div class="container">
+        <div class="heading_container">
+          <h2 style="margin-left: 500px; color: white;">
+            <center>
+              LogIn
+            </center>
+          </h2>
+        </div>
+
+        <div class="row">
+          <div style="margin-left: 300px;" class="col-md-6">
+            <form action="{{url_for('login')}}" method="post">
+
+              <div>
+                <center>
+                  <input style="border-radius: 5px; color: black;" type="email" name="email" placeholder="Email" />
+                </center>
+              </div>
+
+              <div>
+                <center>
+                  <input style="border-radius: 5px; color: black;" type="password" name="password" placeholder="Password" />
+                </center>
+              </div>
+
+              <div class="d-flex ">
+                <center>
+                  <button style="margin-left: 180px; border-radius: 5px;" type="submit">
+                    Login
+                  </button>
+                </center>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
